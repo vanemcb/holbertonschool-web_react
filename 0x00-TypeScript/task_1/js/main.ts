@@ -39,3 +39,25 @@ interface printTeacherFunction {
 const printTeacher: printTeacherFunction = (firstName: string, lastName: string): string => `${firstName.charAt(0)}. ${lastName}`;
 // console.log(printTeacher("John", "Doe"));
 
+// Task 4
+interface StudentClassConstructor {
+	new(firstName: string, lastName: string): StudentClassInterface;
+}
+interface StudentClassInterface {
+	firstName: string;
+	lastName: string;
+}
+class StudentClass implements StudentClassInterface {
+	firstName: string;
+	lastName: string;
+	constructor(firstName: string, lastName: string) {
+		this.firstName = firstName;
+		this.lastName = lastName;
+	}
+	workOnHomework() {
+		return 'Currently working';
+	}
+	displayName() {
+		return this.firstName;
+	}
+}
